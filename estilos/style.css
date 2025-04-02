@@ -87,6 +87,7 @@ section img {
     position: relative;
 }
 
+/*
 nav {
     position: fixed;
     left: 50%;
@@ -129,6 +130,7 @@ nav ul li a:hover {
     background-color: rgb(255, 94, 77);
     color: rgb(239, 166, 0);
 }
+    */
 
 #sobre {
    display: block;
@@ -143,7 +145,8 @@ nav ul li a:hover {
     background-color: rgba(230, 44, 41, 0.525);
     width: 50%;
     height: 33px;
-    display: block;
+    display: inline-block;
+    border-radius: 5px;
 }
 
 #sobre p {
