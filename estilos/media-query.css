@@ -1,0 +1,29 @@
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    section img {
+        height: 70px;
+    }
+
+    .secao h2 {
+        width: 90%;
+        font-size: 1.2em;
+        
+    }
+
+    .secao-conteudo {
+        padding-inline: 15px;
+    }
+
+    .subtitulo {
+        padding-left: 15px;
+        flex-direction: column;
+    }
+
+    .secao h2.baskervville-regular-italic {
+        font-size: 1.2em;
+    }
+
+}
