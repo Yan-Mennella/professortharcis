@@ -209,3 +209,31 @@ section img {
 .galeria img:hover {
     transform: scale(1.05);
 }
+
+footer {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.rodape {
+    background-color: rgba(239, 167, 0, 0.452);
+    padding: 20px 10px;
+    margin-top: 30px;
+}
+
+.rodape-conteudo a {
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+
+}
+
+.rodape-conteudo a:hover {
+    color: rgba(230, 44, 41, 0.8);
+    text-decoration: underline;
+}
+
+.rodape-local {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
