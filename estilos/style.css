@@ -210,6 +210,74 @@ section img {
     transform: scale(1.05);
 }
 
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.modal-content:hover {
+    cursor: zoom-in;
+    opacity: 0.9;
+}
+
+.nav {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 2.5rem;
+    color: white;
+    padding: 10px;
+    user-select: none;
+    z-index: 1001;
+    transform: translateY(-50%);
+    transition: 0.3S;
+}
+
+#prev {
+    left: 20px;
+}
+
+#next {
+    right: 20px;
+}
+
+.nav:hover {
+    color: #ccc;
+}
+
+form label {
+    display: inline-block;
+    width: 70px;
+}
+
+form input {
+    border-radius: 3px;
+    padding: 3px;
+    border: 1px solid black;
+    margin: 2px;
+}
+
+.botoes-form {
+    margin-left: 70px;
+}
+
 footer {
     margin: 0 auto;
     box-sizing: border-box;
@@ -226,11 +294,6 @@ footer {
     margin: 0 8px;
     transition: color 0.3s ease;
 
-}
-
-.rodape-conteudo a:hover {
-    color: rgba(230, 44, 41, 0.8);
-    text-decoration: underline;
 }
 
 .rodape-local {
