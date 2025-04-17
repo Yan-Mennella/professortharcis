@@ -25,7 +25,7 @@
         <section class="secao">
             <h2 class="baskervville-regular-italic">Sobre</h2>
             <div class="secao-conteudo">
-                <p>
+                <p> 
                     Sou Thárcis Santos, Instrutor de Jiu-Jítsu, praticante e competidor desde 2019. Minha jornada começou sob a orientação do Sensei <a href="https://www.instagram.com/danielfolgadobjj/"target="_blank"><em>Daniel Rodrigues (Folgado)</em></a>🔗, sendo filiado à academia do mestre Júlio Secco. Minha missão é ensinar e compartilhar os valores do jiu-jítsu, ajudando alunos de todas as idades a evoluírem técnica e mentalmente dentro da arte suave.
                 </p>
             </div>
@@ -156,17 +156,19 @@
         <section class="secao">
             <h2 class="baskervville-regular-italic">Seja um Parceiro</h2>
             <div class="secao-conteudo">
-                <form action="cadastro.php" method="post">Contate-nos:</form>
-                <p>Enive-nos a sua proposta de parceria, em breve entraremos em contato com você!
-                <br><label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome">
-                <br><label for="fone">Fone:</label>
-                <input type="tel" name="fone" id="fone">
-                <br><label for="email">E-mail:</label>
-                <input type="email" name="email" id="email">
-                <br><input type="submit" value="Enviar">
-                <input type="reset" value="Limpar">
-                </p>
+                <form action="cadastro.php" method="post">Contate-nos:
+                    <p style="text-align: center;">Enive-nos a sua proposta de parceria, em breve entraremos em contato com você!</p>
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" id="nome">
+                        <br><label for="fone">Fone:</label>
+                        <input type="tel" name="fone" id="fone">
+                        <br><label for="email">E-mail:</label>
+                        <input type="email" name="email" id="email">
+                        <div class="botoes-form">
+                            <input type="submit" value="Enviar">
+                            <input type="reset" value="Limpar">
+                        </div>
+                </form>
             </div>
         </section>
     </main>
@@ -174,12 +176,55 @@
         <div class="rodape-conteudo">
             <p>&copy; 2025 Professor Thárcis Santos - Todos os direitos reservados.</p>
             <p>
-                <a href="https://wa.me/555399696349" target="_blank">WhatsApp</a>
-                <a href="https://www.instagram.com/tharcis.bjj/" target="_blank">instagram</a>
-                <a href="#">E-mail</a>
+                <a href="https://wa.me/555399696349" target="_blank">
+                    <img src="imagens/icons8-whatsapp-50.png" alt="">
+                </a>
+                <a href="https://www.instagram.com/tharcis.bjj/" target="_blank">
+                    <img src="imagens/icons8-instagram-48.png" alt="Ícone do Instagram">
+                </a>
             </p>
             <p class="rodape-local">Corpus Fitness - Teixeira de Freitas/BA</p>
         </div>
     </footer>
+    <div id="modal" class="modal">
+        <span id="prev" class="nav">&#10094;</span>
+        <img id="imgModal" class="modal-content">
+        <span id="next" class="nav">&#10095;</span>
+    </div>
+    <script>
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("imgModal");
+        const prevBtn = document.getElementById("prev");
+        const nextBtn = document.getElementById("next");
+
+        const images = Array.from(document.querySelectorAll(".galeria img"));
+        let currentIndex = 0;
+
+        function showImage(index) {
+            currentIndex = (index + images.length) % images.length;
+            modalImg.src = images[currentIndex].src;
+            modal.style.display = "block";
+        }
+
+        images.forEach((img, index) => {
+            img.addEventListener("click", () => {
+                showImage(index);
+            });
+        });
+
+        prevBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            showImage(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            showImage(currentIndex + 1);
+        });
+
+        modal.addEventListener("click", () => {
+            modal.style.display= "none";
+        });
+    </script>
 </body>
 </html>
