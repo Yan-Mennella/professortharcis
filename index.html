@@ -137,16 +137,16 @@
         <section class="secao" style="margin-top: 15px;">
             <h2 class="baskervville-regular-italic">Galeria de Fotos</h2>
             <div class="galeria">
-                <img src="imagens/treino1.jpeg" alt="treino1">
-                <img src="imagens/treino2.jpeg" alt="treino2">
-                <img src="imagens/treino3.jpeg" alt="treino3">
-                <img src="imagens/treino4.jpeg" alt="treino4">
-                <img src="imagens/treino5.jpeg" alt="treino5">
-                <img src="imagens/treino6.jpeg" alt="treino6">
-                <img src="imagens/treino7.jpeg" alt="treino7">
-                <img src="imagens/treino8.jpeg" alt="treino8">
-                <img src="imagens/treino9.jpeg" alt="treino9">
-                <img src="imagens/treino10.jpeg" alt="treino10">
+                <img src="imagens/treino1.jpeg" alt="pós campeonato">
+                <img src="imagens/treino2.jpeg" alt="pós treino">
+                <img src="imagens/treino3.jpeg" alt="meditação pré treino">
+                <img src="imagens/treino4.jpeg" alt="treino de natal">
+                <img src="imagens/treino5.jpeg" alt="exemplo de pé no bíceps">
+                <img src="imagens/treino6.jpeg" alt="meditação treino misto infantil">
+                <img src="imagens/treino7.jpeg" alt="pai e filha treinando">
+                <img src="imagens/treino8.jpeg" alt="meninos observando um rola">
+                <img src="imagens/treino9.jpeg" alt="treino de guarda fechada">
+                <img src="imagens/treino10.jpeg" alt="treino de queda">
             </div>
         </section>
         <section class="secao" style="margin-top: 5px; padding: 10px;">
@@ -191,40 +191,46 @@
         <img id="imgModal" class="modal-content">
         <span id="next" class="nav">&#10095;</span>
     </div>
-    <script>
-        const modal = document.getElementById("modal");
-        const modalImg = document.getElementById("imgModal");
-        const prevBtn = document.getElementById("prev");
-        const nextBtn = document.getElementById("next");
+        <script>
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("imgModal");
+            const prevBtn = document.getElementById("prev");
+            const nextBtn = document.getElementById("next");
 
-        const images = Array.from(document.querySelectorAll(".galeria img"));
-        let currentIndex = 0;
+            const images = Array.from(document.querySelectorAll(".galeria img"));
+            let currentIndex = 0;
 
-        function showImage(index) {
-            currentIndex = (index + images.length) % images.length;
-            modalImg.src = images[currentIndex].src;
-            modal.style.display = "block";
-        }
+            function showImage(index) {
+                currentIndex = (index + images.length) % images.length;
+                modalImg.src = images[currentIndex].src;
+                modal.style.display = "block";
+            }
 
-        images.forEach((img, index) => {
-            img.addEventListener("click", () => {
-                showImage(index);
+            images.forEach((img, index) => {
+                img.addEventListener("click", () => {
+                    showImage(index);
+                });
             });
-        });
 
-        prevBtn.addEventListener("click", (event) => {
-            event.stopPropagation();
-            showImage(currentIndex - 1);
-        });
+            prevBtn.addEventListener("click", (event) => {
+                event.stopPropagation();
+                showImage(currentIndex - 1);
+            });
 
-        nextBtn.addEventListener("click", (event) => {
-            event.stopPropagation();
-            showImage(currentIndex + 1);
-        });
+            nextBtn.addEventListener("click", (event) => {
+                event.stopPropagation();
+                showImage(currentIndex + 1);
+            });
 
-        modal.addEventListener("click", () => {
-            modal.style.display= "none";
-        });
-    </script>
-</body>
-</html>
+            modal.addEventListener("click", () => {
+                modal.style.display= "none";
+            });
+        </script>
+        <script>
+            modalImg.addEventListener("click", function (event) {
+                event.stopPropagation();
+                this.classList.toggle("zoom");
+            });
+        </script>
+    </body>
+    </html>
